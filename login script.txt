@@ -1,0 +1,16 @@
+echo "network={" >> /wpa_supplicant.conf
+echo "  ssid='UCSD-PROTECTED'"
+echo "  key_mgmt=WPA-EAP"
+echo "  eap=TTLS"
+echo "  identity='YOUR_USERNAME'"
+echo "  password='YOUR_PASSWORD'"
+echo "  phase2='auth=MSCHAPv2'"
+echo "}" >>
+
+//For ethan
+sudo sh -c "echo 'network={\n\tssid=\"UCSD-PROTECTED\"\n\tkey_mgmt=WPA-EAP\n\teap=PEAP\n\tidentity=\"sp17t9\"\n\tpassword=\"Spis2017\"\n\tphase2=\"auth=MSCHAPv2\"\n}' >> /etc/wpa_supplicant/wpa_supplicant.conf"
+
+//For Students
+sudo sh -c "echo 'network={\n\tssid=\"UCSD-PROTECTED\"\n\tkey_mgmt=WPA-EAP\n\teap=PEAP\n\tidentity=\"YOUR_USERNAME\"\n\tpassword=\"YOUR_PASSWORD\"\n\tphase2=\"auth=MSCHAPv2\"\n}' >> /etc/wpa_supplicant/wpa_supplicant.conf"
+sudo sed -i -e 's/YOUR_USERNAME/sp17t9/g' /etc/wpa_supplicant/wpa_supplicant.conf
+sudo sed -i -e 's/YOUR_PASSWORD/Spis2017/g' /etc/wpa_supplicant/wpa_supplicant.conf

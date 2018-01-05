@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+
+    <input id="ip"></input>
+    <button type="button" onclick="changeText()">
+Click me</button>
+    <p id="op"></p>
+
+    <script>
+        function changeText() {
+
+            var oldText = document.getElementById("ip").value;
+            var newText = oldText;
+            var i;
+            for (i = 0; i < oldText.length; i++) {
+                if (i % 2 != 0) {
+                    newText = newText.substr(0, i) + newText.substr(i, 1).toUpperCase() +
+                        newText.substr(i + 1);
+                }
+
+            }
+
+            document.getElementById("op").innerHTML = newText;
+        }
+    </script>
+
+</body>
+
+</html>
